@@ -1,0 +1,13 @@
+:root {
+    /* 文字主题色,上一页下一页按钮浮动边框的颜色,导航文字hover颜色 */
+    --vp-c-green: purple;
+    /* 首页brand按钮的边框色 */
+    --vp-c-brand-light: purple;
+    /* 首页brand按钮hover的边框色 */
+    --vp-c-brand-lighter: purple;
+    /* 按钮文字hover的颜色 */
+    --vp-c-brand-dark: purple;
+    --vp-c-brand-darker: purple;
+    /* 代码块背景色 */
+    --vp-code-block-bg: rgba(125, 125, 125, .04);
+}

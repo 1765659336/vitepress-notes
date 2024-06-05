@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #father {
+            width: 500px;
+            border: 1px solid #ccc;
+            height: 20px;
+        }
+        
+        #son {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="father">
+        <div id="son"></div>
+    </div>
+</body>
+<script>
+    const handle = function(i) {
+        if (i <= 100) {
+            setTimeout(() => {
+                const son = document.getElementById("son");
+                son.innerHTML = i;
+                son.style.width = i + "%";
+                handle(++i);
+            }, 10);
+        }
+    }
+    handle(0);
+</script>
+
+</html>

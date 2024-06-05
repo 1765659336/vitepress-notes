@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<h1>题目描述</h1>
+<h4>Hercy 想要为购买第一辆车存钱。他每天都往力扣银行里存钱。最开始，他在周一的时候存入1块钱。从周二到周日，他每天都比前一天多存入1块钱。在接下来每一个周一，他都会比前一个周一多存入1块钱。给你n，请你返回在第n天结束的时候他在力扣银行总共存了多少块钱。
+    <a href="https://leetcode-cn.com/problems/calculate-money-in-leetcode-bank" target="_blank">来源:力扣（LeetCode）链接:</a> 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+</h4>
+<h1>解题思路</h1>
+<h4>可以使用数组也可以使用栈,具体实现就是判断是否是星期一,找到每天应该多少钱</h4>
+<h1>尝试使用</h1>
+请输入天数(一个大于0的整数):
+<input type="text" id="input" /> day
+<br />
+<button id="btn">计算</button>
+<br /> 存入银行的钱:
+<input type="text" id="output" /> ￥
+<br />
+<h1>代码实现</h1>
+<h4>数组的方式</h4>
+<pre>
+    <code>
+        // 数组的方式
+        const main = function(n) {
+            const item = [];
+            // 1.有多少天,存多少次钱
+            for (let i = 1; i <= n; i++) {
+                if (i % 7 === 1) {
+                    // 2.1 如果是星期一
+                    // 第几周就存几块钱
+                    item.push(Math.floor(i / 7) + 1);
+                } else {
+                    // 2.2 如果不是星期一
+                    // 就比前一天多存一块钱
+                    item.push(item[item.length - 1] + 1);
+                }
+            }
+            // 3.数组累加返回一共存了多少钱
+            return item.reduce((total, im) => {
+                total = total + im;
+                return total;
+            }, 0)
+        };
+        document.getElementById("btn").addEventListener("click", function() {
+            const inputValue = document.getElementById("input").value;
+            // 字符类型转数值类型
+            const outputValue = main(inputValue - 0);
+            document.getElementById("output").value = outputValue;
+        });
+    </code>
+</pre>
+<h4>栈的方式</h4>
+<pre>
+    <code>
+        // 栈的方式
+        const main = function(n) {
+            const stack = new Stack();
+            // 1.有多少天,存多少次钱
+            for (let i = 1; i <= n; i++) {
+                if (i % 7 === 1) {
+                    // 2.1 如果是星期一
+                    // 第几周就存几块钱
+                    stack.push(Math.floor(i / 7) + 1);
+                } else {
+                    // 2.2 如果不是星期一
+                    // 就比前一天多存一块钱
+                    stack.push(stack.peek() + 1);
+                }
+            }
+            console.log(stack.getStack());
+            let sum = 0;
+            while (!stack.isEmpty()) {
+                sum += stack.peek();
+                stack.pop();
+            }
+            return sum
+        }
+        document.getElementById("btn").addEventListener("click", function() {
+            const inputValue = document.getElementById("input").value;
+            // 字符类型转数值类型
+            const outputValue = main(inputValue - 0);
+            document.getElementById("output").value = outputValue;
+        });
+    </code>
+</pre>
+
+<body>
+    <script src="../../Stack.js"></script>
+    <script>
+        // 数组的方式
+        // const main = function(n) {
+        //     const item = [];
+        //     // 1.有多少天,存多少次钱
+        //     for (let i = 1; i <= n; i++) {
+        //         if (i % 7 === 1) {
+        //             // 2.1 如果是星期一
+        //             // 第几周就存几块钱
+        //             item.push(Math.floor(i / 7) + 1);
+        //         } else {
+        //             // 2.2 如果不是星期一
+        //             // 就比前一天多存一块钱
+        //             item.push(item[item.length - 1] + 1);
+        //         }
+        //     }
+        //     // 3.数组累加返回一共存了多少钱
+        //     return item.reduce((total, im) => {
+        //         total = total + im;
+        //         return total;
+        //     }, 0)
+        // };
+        // 栈的方式
+        const main = function(n) {
+            const stack = new Stack();
+            // 1.有多少天,存多少次钱
+            for (let i = 1; i <= n; i++) {
+                if (i % 7 === 1) {
+                    // 2.1 如果是星期一
+                    // 第几周就存几块钱
+                    stack.push(Math.floor(i / 7) + 1);
+                } else {
+                    // 2.2 如果不是星期一
+                    // 就比前一天多存一块钱
+                    stack.push(stack.peek() + 1);
+                }
+            }
+            console.log(stack.getStack());
+            let sum = 0;
+            while (!stack.isEmpty()) {
+                sum += stack.peek();
+                stack.pop();
+            }
+            return sum
+        }
+        document.getElementById("btn").addEventListener("click", function() {
+            const inputValue = document.getElementById("input").value;
+            // 字符类型转数值类型
+            const outputValue = main(inputValue - 0);
+            document.getElementById("output").value = outputValue;
+        });
+    </script>
+</body>
+
+</html>

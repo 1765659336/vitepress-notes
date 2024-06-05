@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 100px;
+            background-color: pink;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .container .flexContainer div {
+            height: 100px;
+        }
+        
+        .container .flexContainer:nth-child(1) {
+            background-color: yellow;
+        }
+        
+        .container .flexContainer:nth-child(2) {
+            background-color: blue;
+        }
+        
+        .container .flexContainer:nth-child(3) {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 不给flex容器设置高度，所有的子盒子的高度的值都等于高度最高的子项的高度的值
+        align-self默认值auto。元素继承了它的父容器的 align-items 属性。如果没有父容器则为 "stretch"。
+        stretch，元素被拉伸以适应容器 -->
+    <div class="container">
+        <div class="flexContainer">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <div class="flexContainer">
+            <div>1</div>
+        </div>
+        <div class="flexContainer">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </div>
+    </div>
+</body>
+
+</html>

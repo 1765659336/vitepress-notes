@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #ccc;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .container {
+            padding: 10px 20px;
+            background-color: #fff;
+        }
+        
+        .header {
+            font-size: 20px;
+            font-weight: 600;
+        }
+        
+        .content {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(4, 100px);
+            grid-template-areas: "a1 a3 a3""a2 a3 a3""a4 a4 a5""a6 a7 a7";
+            gap: 20px 30px;
+            place-items: center center;
+        }
+        
+        .content div {
+            height: 100%;
+            width: 100%;
+        }
+        
+        .content div:nth-child(1) {
+            background-color: skyblue;
+            grid-area: a1;
+        }
+        
+        .content div:nth-child(2) {
+            width: 100%;
+            background-color: pink;
+            grid-area: a2;
+        }
+        
+        .content div:nth-child(3) {
+            background-color: skyblue;
+            grid-area: a3;
+        }
+        
+        .content div:nth-child(4) {
+            background-color: skyblue;
+            grid-area: a4;
+        }
+        
+        .content div:nth-child(5) {
+            background-color: skyblue;
+            grid-area: a5;
+        }
+        
+        .content div:nth-child(6) {
+            background-color: orange;
+            grid-area: a6;
+        }
+        
+        .content div:nth-child(7) {
+            background-color: orange;
+            grid-area: a7;
+        }
+        
+        .footer {
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            今日上榜
+        </div>
+        <div class="content">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+        </div>
+        <div class="footer">
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+        </div>
+    </div>
+</body>
+
+</html>

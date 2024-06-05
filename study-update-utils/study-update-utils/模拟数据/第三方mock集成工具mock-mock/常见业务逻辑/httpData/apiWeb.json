@@ -1,0 +1,17 @@
+{
+  "paths": {
+    "/users": {
+      "get": {
+        "responses": {
+          "200": {
+            "example": {
+              "useDataType": "custom",
+              "custom": "(req, res) => {\nres.set({\n  \"x-powered-by\": \"Express\",\n  \"vary\": \"Origin\",\n  \"cache-control\": \"no-cache\",\n  \"pragma\": \"no-cache\",\n  \"expires\": \"-1\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"date\": \"Fri, 11 Feb 2022 07:05:36 GMT\"\n})\nres.json({\n  \"code\": \"200\",\n  \"success\": true,\n  \"data\": [\n    {\n      \"id\": 1,\n      \"name\": \"高敏\",\n      \"sex\": \"男\"\n    },\n    {\n      \"id\": 2,\n      \"name\": \"康涛\",\n      \"sex\": \"保密\"\n    },\n    {\n      \"id\": 3,\n      \"name\": \"贾磊\",\n      \"sex\": \"保密\"\n    },\n    {\n      \"id\": 4,\n      \"name\": \"高明\",\n      \"sex\": \"女\"\n    },\n    {\n      \"id\": 5,\n      \"name\": \"彭军\",\n      \"sex\": \"女\"\n    },\n    {\n      \"id\": 6,\n      \"name\": \"杜超\",\n      \"sex\": \"保密\"\n    },\n    {\n      \"id\": 7,\n      \"name\": \"苏娟\",\n      \"sex\": \"女\"\n    },\n    {\n      \"id\": 8,\n      \"name\": \"孙秀兰\",\n      \"sex\": \"男\"\n    },\n    {\n      \"id\": 9,\n      \"name\": \"李磊\",\n      \"sex\": \"男\"\n    },\n    {\n      \"id\": 10,\n      \"name\": \"孙刚\",\n      \"sex\": \"男\"\n    },\n    {\n      \"id\": 11,\n      \"name\": \"徐明\",\n      \"sex\": \"女\"\n    },\n    {\n      \"id\": 12,\n      \"name\": \"贾秀英\",\n      \"sex\": \"男\"\n    },\n    {\n      \"id\": 13,\n      \"name\": \"冯强\",\n      \"sex\": \"女\"\n    },\n    {\n      \"id\": 14,\n      \"name\": \"戴明\",\n      \"sex\": \"保密\"\n    },\n    {\n      \"id\": 15,\n      \"name\": \"魏丽\",\n      \"sex\": \"保密\"\n    },\n    {\n      \"id\": 16,\n      \"name\": \"唐超\",\n      \"sex\": \"男\"\n    },\n    {\n      \"id\": 17,\n      \"name\": \"任娜\",\n      \"sex\": \"女\"\n    },\n    {\n      \"id\": 18,\n      \"name\": \"赵秀兰\",\n      \"sex\": \"保密\"\n    },\n    {\n      \"id\": 19,\n      \"name\": \"杨涛\",\n      \"sex\": \"保密\"\n    },\n    {\n      \"id\": 20,\n      \"name\": \"于芳\",\n      \"sex\": \"女\"\n    }\n  ]\n})\n}"
+            }
+          }
+        }
+      }
+    }
+  },
+  "disable": []
+}

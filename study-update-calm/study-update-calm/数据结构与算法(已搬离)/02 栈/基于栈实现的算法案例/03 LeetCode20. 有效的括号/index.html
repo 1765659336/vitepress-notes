@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<h1>题目描述</h1>
+<h4>
+    给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串 s ，判断字符串是否有效。 有效字符串需满足: 左括号必须用相同类型的右括号闭合。 左括号必须以正确的顺序闭合。
+    <a href="https://leetcode-cn.com/problems/valid-parentheses" target="_blank">来源:力扣（LeetCode）链接:</a> 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
+</h4>
+<h1>解题思路</h1>
+<h4>遍历字符串,遇到左括号就入栈,遇到右括号就判断是否是栈顶的匹配括号,如果是,就将栈顶出栈,遍历完之后判断栈的长度是否为0,不为0则说明有对应的左括号没有与之对应的右括号</h4>
+<h1>尝试使用</h1>
+请输入字符串(只能包含'('，')'，'{'，'}'，'['，']' 6种字符):
+<input type="text" id="input" />
+<br />
+<button id="btn">计算</button>
+<br /> 是否符合要求
+<input type="text" id="output" />
+<br />
+<h1>代码实现</h1>
+<h4>数组的方式</h4>
+<pre>
+    <code>
+        // 数组的方式
+        const main = function(s) {
+            const array = [];
+            for (let i of s) {
+                if (i === "(" || i === "{" || i === "[") {
+                    array.push(i);
+                } else {
+                    switch (i) {
+                        case ")":
+                            if (array[array.length - 1] === "(") {
+                                array.pop();
+                            } else {
+                                return false;
+                            }
+                            break;
+                        case "}":
+                            if (array[array.length - 1] === "{") {
+                                array.pop();
+                            } else {
+                                return false;
+                            }
+                            break;
+                        case "]":
+                            if (array[array.length - 1] === "[") {
+                                array.pop();
+                            } else {
+                                return false;
+                            }
+                            break;
+                    }
+                }
+            }
+            if (array.length !== 0) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        document.getElementById("btn").addEventListener("click", function() {
+            const inputValue = document.getElementById("input").value;
+            const outputValue = main(inputValue);
+            // 布尔型转字符型
+            document.getElementById("output").value = outputValue + "";
+        });
+    </code>
+</pre>
+<h4>栈的方式</h4>
+<pre>
+    <code>
+        // 栈的方式
+        const main = function(s) {
+            const stack = new Stack();
+            for (let i of s) {
+                if (i === "(" || i === "{" || i === "[") {
+                    stack.push(i);
+                } else {
+                    switch (i) {
+                        case ")":
+                            if (stack.peek() === "(") {
+                                stack.pop();
+                            } else {
+                                return false;
+                            }
+                            break;
+                        case "}":
+                            if (stack.peek() === "{") {
+                                stack.pop();
+                            } else {
+                                return false;
+                            }
+                            break;
+                        case "]":
+                            if (stack.peek() === "[") {
+                                stack.pop();
+                            } else {
+                                return false;
+                            }
+                            break;
+                    }
+                }
+            }
+            return stack.isEmpty();
+        }
+        document.getElementById("btn").addEventListener("click", function() {
+            const inputValue = document.getElementById("input").value;
+            const outputValue = main(inputValue);
+            // 布尔型转字符型
+            document.getElementById("output").value = outputValue + "";
+        });
+    </code>
+</pre>
+
+<body>
+    <script src="../../Stack.js"></script>
+    <script>
+        // // 数组的方式
+        // const main = function(s) {
+        //     const array = [];
+        //     for (let i of s) {
+        //         if (i === "(" || i === "{" || i === "[") {
+        //             array.push(i);
+        //         } else {
+        //             switch (i) {
+        //                 case ")":
+        //                     if (array[array.length - 1] === "(") {
+        //                         array.pop();
+        //                     } else {
+        //                         return false;
+        //                     }
+        //                     break;
+        //                 case "}":
+        //                     if (array[array.length - 1] === "{") {
+        //                         array.pop();
+        //                     } else {
+        //                         return false;
+        //                     }
+        //                     break;
+        //                 case "]":
+        //                     if (array[array.length - 1] === "[") {
+        //                         array.pop();
+        //                     } else {
+        //                         return false;
+        //                     }
+        //                     break;
+        //             }
+        //         }
+        //     }
+        //     if (array.length !== 0) {
+        //         return false;
+        //     } else {
+        //         return true;
+        //     }
+        // }
+
+        // 栈的方式
+        const main = function(s) {
+            const stack = new Stack();
+            for (let i of s) {
+                if (i === "(" || i === "{" || i === "[") {
+                    stack.push(i);
+                } else {
+                    switch (i) {
+                        case ")":
+                            if (stack.peek() === "(") {
+                                stack.pop();
+                            } else {
+                                return false;
+                            }
+                            break;
+                        case "}":
+                            if (stack.peek() === "{") {
+                                stack.pop();
+                            } else {
+                                return false;
+                            }
+                            break;
+                        case "]":
+                            if (stack.peek() === "[") {
+                                stack.pop();
+                            } else {
+                                return false;
+                            }
+                            break;
+                    }
+                }
+            }
+            return stack.isEmpty();
+        }
+        document.getElementById("btn").addEventListener("click", function() {
+            const inputValue = document.getElementById("input").value;
+            const outputValue = main(inputValue);
+            // 布尔型转字符型
+            document.getElementById("output").value = outputValue + "";
+        });
+    </script>
+</body>
+
+</html>

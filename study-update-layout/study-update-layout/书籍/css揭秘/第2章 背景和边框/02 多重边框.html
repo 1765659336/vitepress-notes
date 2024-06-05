@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02 多重边框</title>
+    <style>
+        .container {
+            width: 300px;
+            height: 300px;
+            /*  1、不过 box-shadow 的好处在于，它支持逗号分隔语法，我们可以创建任意数量的投影
+                2、box-shadow 是层层叠加的，第一层投影位于最顶层，依次类推
+                3、后面的shadow被前面的shadow覆盖，因此大小一般是从小到大的
+                4、外shadow不会影响盒子的大小，并且外shadow的部分是没有事件的，当我们给盒子添加点击事件时，点击shadow是无法触发的 */
+            box-shadow: 0px 0px 0px 5px pink inset, 0px 0px 0px 10px green inset, 0px 0px 0px 15px skyblue inset;
+        }
+        /*  1、在某些情况下，你可能只需要两层边框，那就可以先设置一层常规边框，再加上 outline（描边）属性来产生外层的边框。这种方法的一大优点在于边框样式十分灵活，不像上面的 box-shadow 方案只能模拟实线边框
+（假设我们需要产生虚线边框效果，box-shadow 就没辙了）。
+            2、通过 outline-offset来设置描边和盒子的间隙，可以为负值。当为正值时，描边和盒子之间会有间隙，颜色是当前盒子所在文档流结构盒子的背景颜色
+            3、边框可以贴合border-radius来产生圆角边框
+            4、 outline描边的部分不会影响盒子的大小，并且outline描边的部分是没有事件的，当我们给盒子添加点击事件时，点击outline描边的部分是无法触发的*/
+        
+        .box {
+            margin-top: 20px;
+            width: 300px;
+            height: 300px;
+            border: 5px dashed black;
+            outline: 10px solid pink;
+            background-color: pink;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container"></div>
+    <div class="box"></div>
+</body>
+
+</html>

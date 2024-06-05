@@ -1,0 +1,27 @@
+.div-warning-message {
+    color: #fdebeb;
+    background-color: #f3575d;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.div-info-message {
+    color: #fdebeb;
+    background-color: rgb(10, 187, 10);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.span-warning-message {
+    color: #f3575d;
+}
+
+.span-info-message {
+    color: rgb(10, 187, 10);
+}
+
+.div-info-Line {
+    width: 100%;
+    margin: 10px 0;
+    border-bottom: 1px rgb(10, 187, 10) solid;
+}

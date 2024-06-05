@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            height: 50px;
+            background-color: pink;
+            display: flex;
+        }
+        
+        .component1 {
+            flex-grow: 1;
+            background-color: yellow;
+        }
+        
+        .component2 {
+            flex-grow: 2;
+            background-color: blue;
+        }
+        
+        .box {
+            height: 50px;
+            background-color: pink;
+            display: flex;
+        }
+        
+        .box div {
+            flex-grow: 1;
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="component1">1</div>
+        <div class="component2">2</div>
+    </div>
+    <br>
+    <div class="box">
+        <div>1</div>
+    </div>
+</body>
+
+</html>

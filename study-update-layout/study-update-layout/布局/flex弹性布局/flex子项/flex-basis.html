@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+            display: flex;
+            /* 通过flex-direction来动态改变子盒子的宽、高 */
+            flex-direction: column;
+        }
+        
+        .container div:nth-child(1) {
+            flex-basis: 100px;
+            background-color: yellow;
+        }
+        
+        .container div:nth-child(2) {
+            flex-basis: 150px;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div>1</div>
+        <div>2</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 300px;
+            height: 300px;
+            display: grid;
+            grid-template: "a1 a1 a2" 1fr "a1 a1 a2" 1fr "a3 a3 a3" 1fr / 1fr 1fr 1fr;
+            /* row-gap: 20px;
+            column-gap: 30px; */
+            gap: 20px 30px;
+        }
+        
+        .container div {
+            border: 1px solid #ccc;
+        }
+        
+        .container div:nth-child(1) {
+            grid-area: a2;
+        }
+        
+        .container div:nth-child(2) {
+            grid-area: a3;
+        }
+        
+        .container div:nth-child(3) {
+            grid-area: a1;
+        }
+        
+        .flexContainer {
+            margin-top: 20px;
+            width: 300px;
+            height: 300px;
+            display: flex;
+            flex-wrap: wrap;
+            background-color: pink;
+            gap: 0 20px;
+        }
+        
+        .flexContainer div {
+            width: 100px;
+            height: 50px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <!-- 在flex中使用间隙 -->
+    <div class="flexContainer">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </div>
+</body>
+
+</html>

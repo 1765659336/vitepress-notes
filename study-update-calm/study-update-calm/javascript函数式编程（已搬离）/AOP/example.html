@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.26.0/axios.js"></script>
+    <script>
+        // 我们为自己本地开发时创建一个网络请求日志功能
+        Function.prototype.before = function(fnBe) {
+            const _this = this;
+            return function() {
+                fnBe.call(this, ...arguments);
+                _this.call(this, ...arguments);
+            };
+        };
+
+        Function.prototype.after = function(fnAf) {
+            const _this = this;
+            return function() {
+                _this.call(this, ...arguments);
+                const inter = setInterval(() => {
+                    if (this.result !== undefined) {
+                        fnAf.call(this, this.result)
+                        clearInterval(inter);
+                    }
+                }, 100)
+            };
+        };
+
+        function network(method, url, data = {}) {
+            axios({
+                method,
+                url,
+                data
+            }).then(res => {
+                this.result = res;
+            }).catch(err => {
+                this.result = err;
+            })
+        }
+
+        network
+            .before(function() {
+                /* 可以获取到每次请求的方式，路径，参数 */
+                console.log(...arguments);
+            })
+            .after(function() {
+                /* 可以获取每次网络请求的成功响应体或者失败的err */
+                console.log(...arguments);
+            })
+            .call(network, "get", "http://jsonplaceholder.typicode.com/posts");
+    </script>
+</body>
+
+</html>

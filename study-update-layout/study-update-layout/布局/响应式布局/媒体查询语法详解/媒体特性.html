@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* max-width条件最大只能满足768px，再大就不满足了
+            min-width
+        */
+        
+        @media (max-width: 768px) {
+            .box {
+                background-color: pink;
+                height: 100px;
+                width: 100px;
+            }
+        }
+        /* 横屏 */
+        
+        @media (orientation: landscape) {
+            .box {
+                border: 10px solid red;
+            }
+        }
+        /* 竖屏 */
+        /* 谷歌调试改成移动端上面有一个切换横屏图标 */
+        
+        @media (orientation: portrait) {
+            .box {
+                border: 10px solid green;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        123
+    </div>
+</body>
+
+</html>

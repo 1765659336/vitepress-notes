@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 以前我们动态生成一个标签函数可能是这样子的
+
+        const createTags = function(tagType, content) {
+            const startTag = "<" + tagType + ">";
+            const endTag = "</" + tagType + ">";
+            return `${startTag + content + endTag}`;
+        };
+
+        document.write(createTags("h1", "标题"));
+
+        // 使用偏函数允许设置标签默认值
+        const createTagsCurrying = function(tagType) {
+            const startTag = "<" + tagType + ">";
+            const endTag = "</" + tagType + ">";
+            return function(content) {
+                return `${startTag + content + endTag}`;
+            }
+        }
+        const createDiv = createTagsCurrying("div");
+        document.write(createDiv("我是一个div"));
+        const createP = createTagsCurrying("p");
+        document.write(createDiv("我是一个p"));
+    </script>
+</body>
+
+</html>

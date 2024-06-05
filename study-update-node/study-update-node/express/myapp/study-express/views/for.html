@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <h2>{{title}}</h2>
+    <!-- 循环list，每一项为item -->
+    {{each list as item }}
+    <!-- 判断list中的每一项item的id属性是否等于targetId字段 -->
+    {{if item.id === targetId}}
+    <p style="color: #f00;">数据id：{{item.id}}，内容：{{item.content}}</p>
+    {{else}}
+    <p>数据id：{{item.id}}，内容：{{item.content}}</p>
+    {{/if}} {{/each}}
+</body>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 300px;
+            height: 300px;
+            display: grid;
+            grid-template: "a1 a1 a2" 1fr "a1 a1 a2" 1fr "a3 a3 a3" 1fr / 1fr 1fr 1fr;
+            background-color: pink;
+            /* 相对于自己分配的盒子的主轴的位置 */
+            /* justify-items: center; */
+            /* 相对于自己分配的盒子的交叉轴的位置 */
+            /* align-items: center; */
+            /* 简写 */
+            place-items: center center;
+        }
+        
+        .container div {
+            border: 1px solid black;
+        }
+        
+        .container div:nth-child(1) {
+            height: 50px;
+            width: 50px;
+            grid-area: a2;
+        }
+        
+        .container div:nth-child(2) {
+            height: 50px;
+            width: 50px;
+            grid-area: a3;
+        }
+        
+        .container div:nth-child(3) {
+            height: 50px;
+            width: 50px;
+            grid-area: a1;
+        }
+        
+        .container2 {
+            /* 设置所有单元格的整体位置的前提条件是容器比所有单元格占的面积要大 */
+            width: 500px;
+            height: 500px;
+            display: grid;
+            grid-template: "a1 a1 a2" 100px "a1 a1 a2" 100px "a3 a3 a3" 100px / 100px 100px 100px;
+            background-color: pink;
+            /* justify-content: center; */
+            /* align-content: center; */
+            place-content: center center;
+        }
+        
+        .container2 div {
+            border: 1px solid black;
+        }
+        
+        .container2 div:nth-child(1) {
+            height: 50px;
+            width: 50px;
+            grid-area: a2;
+        }
+        
+        .container2 div:nth-child(2) {
+            height: 50px;
+            width: 50px;
+            grid-area: a3;
+        }
+        
+        .container2 div:nth-child(3) {
+            height: 50px;
+            width: 50px;
+            grid-area: a1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
+    <div class="container2">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+</body>
+
+</html>

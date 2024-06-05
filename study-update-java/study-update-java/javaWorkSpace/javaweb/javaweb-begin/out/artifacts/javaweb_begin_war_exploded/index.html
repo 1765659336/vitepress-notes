@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/axios/0.26.1/axios.js"></script>
+</head>
+<body>
+名称：<input type="text" class="value"/><br>
+价格：<input type="text" class="value"/><br>
+数量：<input type="text" class="value"/><br>
+备注：<input type="text" class="value"/><br>
+<button type="submit" id="btn">提交</button>
+<script>
+    const btn = document.getElementById("btn");
+    const fname = document.getElementsByClassName("value");
+    btn.addEventListener("click", function () {
+        axios.post("http://localhost:8089/add", {
+            "name": fname[0].value,
+            "price": fname[1].value,
+            "count": fname[2].value,
+            "remark": fname[3].value
+        }, {
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            }
+        });
+    }, false);
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<h1>题目描述</h1>
+<h4>
+    在优先级队列中,在插入一个元素的时候会考虑改数据的优先级,先和其它队列中的元素进行一个优先级比较进行比较,再决定处于队列中的哪个位置.实际上就可以理解为插队,在现实生活中就普遍存在这种现象,头等舱的乘客比商务舱的乘客先登记,很多窗口设置军人\残疾人\特殊群体优先优先
+</h4>
+<h1>解题思路</h1>
+<h4>在内部封装一个内部类,用来创建一个包含元素值和优先级的元素,每次进行插入的时候,从头开始判断,找到第一个优先级比该元素小的元素,插入到这个元素前面一位</h4>
+<h1>尝试使用</h1>
+请输入元素值:
+<input type="text" id="input1" />
+<br /> 请输入优先级:
+<input type="text" id="input2" />
+<br>
+<button id="btn">入队列并返回最终的队列</button>
+<br /> 最终的队列:
+<textarea id="output"></textarea>
+<br />
+<h1>代码实现</h1>
+<pre>
+    <code>
+        
+    </code>
+</pre>
+
+<body>
+    <script src="../../PriorityQueue.js"></script>
+    <script>
+        const priorityQueue = new PriorityQueue();
+        const main = function(element, priority) {
+            priorityQueue.PriorityQueueIn(element, priority);
+            return priorityQueue.getPriorityQueue();
+        }
+        document.getElementById("btn").addEventListener("click", function() {
+            const inputValue1 = document.getElementById("input1").value;
+            // 字符型转数值型
+            const inputValue2 = document.getElementById("input2").value - 0;
+            const outputValue = main(inputValue1, inputValue2);
+            // 数组转字符串
+            document.getElementById("output").value = JSON.stringify(outputValue);
+        });
+    </script>
+</body>
+
+</html>

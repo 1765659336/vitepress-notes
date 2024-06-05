@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<h1>题目描述</h1>
+<h4>
+    击鼓传花游戏介绍,循环队列模拟一个圆,队列前面的人出列再入列,倒计时结束,此时在队列第一位的被淘汰,当队伍中,只剩下一人时,游戏结束
+</h4>
+<h1>解题思路</h1>
+<h4>循环队列长度大于1时,一直将队列头的人移到队列末尾,用number模拟时间,假设(number为2,则当执行2次队列头移到队列尾操作时,将队列头的人淘汰)</h4>
+<h1>尝试使用</h1>
+请输入参数的人员名字(用逗号隔开,如小红,小蓝,小美)
+<input type="text" id="input1" />
+<br /> 请输入时间(大于0的整数)
+<input type="text" id="input2" />
+<br>
+<button id="btn">游戏开始</button>
+<br /> 最终胜利的玩家
+<input type="text" id="output" />
+<br />
+<h1>代码实现</h1>
+<pre>
+    <code>
+        const main = function(names, number) {
+            // 时间 number
+            // 游戏参与的人员 names
+            const queue = new Queue();
+            // 人员入队
+            for (let k in names) {
+                queue.queueIn(names[k]);
+            }
+            // 游戏开始
+            while (queue.size() > 1) {
+                for (let i = 0; i < number; i++) {
+                    queue.queueIn(queue.queueOut());
+                }
+                alert(queue.queueOut() + '被淘汰了')
+            }
+            alert(queue.peek() + '胜利了')
+            return queue.peek();
+        }
+        document.getElementById("btn").addEventListener("click", function() {
+            // 字符串转数组
+            const inputValue1 = document.getElementById("input1").value.split(",");
+            // 字符型转数值型
+            const inputValue2 = document.getElementById("input2").value - 0;
+            const outputValue = main(inputValue1, inputValue2);
+            document.getElementById("output").value = outputValue;
+        });
+    </code>
+</pre>
+
+<body>
+    <script src="../../Queue.js"></script>
+    <script>
+        const main = function(names, number) {
+            // 时间 number
+            // 游戏参与的人员 names
+            const queue = new Queue();
+            // 人员入队
+            for (let k in names) {
+                queue.queueIn(names[k]);
+            }
+            // 游戏开始
+            while (queue.size() > 1) {
+                for (let i = 0; i < number; i++) {
+                    queue.queueIn(queue.queueOut());
+                }
+                alert(queue.queueOut() + '被淘汰了')
+            }
+            alert(queue.peek() + '胜利了')
+            return queue.peek();
+        }
+        document.getElementById("btn").addEventListener("click", function() {
+            // 字符串转数组
+            const inputValue1 = document.getElementById("input1").value.split(",");
+            // 字符型转数值型
+            const inputValue2 = document.getElementById("input2").value - 0;
+            const outputValue = main(inputValue1, inputValue2);
+            document.getElementById("output").value = outputValue;
+        });
+    </script>
+</body>
+
+</html>

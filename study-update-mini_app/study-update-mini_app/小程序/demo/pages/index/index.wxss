@@ -1,0 +1,5 @@
+.title {
+  color:red;
+  /* rpx，px的一半 */
+  font-size: 40rpx;
+}

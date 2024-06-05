@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        .container {
+            height: 50vh;
+            display: flex;
+        }
+        
+        .container div:nth-child(1) {
+            background-color: pink;
+            width: 100px;
+        }
+        
+        .container div:nth-child(2) {
+            flex-grow: 1;
+        }
+        
+        .container div:nth-child(3) {
+            width: 200px;
+            background-color: blue;
+        }
+        
+        .box {
+            height: 50vh;
+        }
+        
+        .box div:nth-child(1) {
+            float: left;
+            height: 100%;
+            width: 200px;
+            background-color: yellow;
+        }
+        
+        .box div:nth-child(2) {
+            overflow: hidden;
+            height: 100%;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <div class="box">
+        <div>1</div>
+        <div>2</div>
+    </div>
+</body>
+
+</html>

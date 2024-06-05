@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            background-color: pink;
+            display: grid;
+            height: 500px;
+            /* grid-template-columns: 100px 100px 100px; */
+            /* repeat()书写重复的值 */
+            /* grid-template-columns: repeat(3, 100px); */
+            /* grid-template-columns: 150px 100px 100px; */
+            /* grid-template-columns: 150px repeat(2, 100px); */
+            /* auto-fill自适应grid容器大小的网格个数 */
+            /* grid-template-columns: repeat(auto-fill, 100px); */
+            /* minmax()设置网格最小值和最大值 */
+            grid-template-columns: repeat(auto-fill, minmax( 100px, 1fr));
+            grid-template-rows: 100px;
+            gap: 20px 20px;
+            grid-auto-rows: 100px;
+        }
+        
+        .container div {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+    </div>
+</body>
+
+</html>

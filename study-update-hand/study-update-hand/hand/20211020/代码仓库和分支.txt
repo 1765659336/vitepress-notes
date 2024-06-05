@@ -1,0 +1,2 @@
+gitlab地址：https://rdc.hand-china.com/gitlab/15851/srm-wechat-muti.git
+分支branch ：shaungrui_wx_21_11_1

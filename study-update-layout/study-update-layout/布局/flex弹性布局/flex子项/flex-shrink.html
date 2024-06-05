@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            height: 50px;
+            /* 设置成10px，肯定装不下 */
+            width: 200px;
+            background-color: pink;
+            display: flex;
+        }
+        
+        .container div {
+            width: 100px;
+        }
+        /* 
+        |200 - 300| = 100 还差多少空间
+        100/(2+1+1) = 25 每一个倍数是多少空间
+        分别拿自身的倍数乘以25得到要从原始尺寸缩小多大的空间*/
+        
+        .container div:nth-child(1) {
+            flex-shrink: 2;
+            background-color: yellow;
+        }
+        
+        .container div:nth-child(2) {
+            background-color: green;
+        }
+        
+        .container div:nth-child(3) {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div>11111</div>
+        <div>22222</div>
+        <div>33333</div>
+    </div>
+</body>
+
+</html>

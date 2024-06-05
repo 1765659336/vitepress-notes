@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        .container {
+            width: 100vw;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            background-color: yellow;
+        }
+        
+        .container div {
+            flex-shrink: 0;
+            width: 100px;
+            height: 80px;
+            background-color: pink;
+            margin-right: 10px;
+        }
+        
+        .box {
+            width: 100vw;
+            height: 100px;
+            background-color: blue;
+        }
+        /* 浮动一行放不下会换行 */
+        
+        .box section {
+            /* 手动给一个刚好可以放下所有子盒子的宽度,使用浮动的麻烦点 */
+            width: 880px;
+        }
+        
+        .box div {
+            float: left;
+            width: 100px;
+            height: 80px;
+            background-color: pink;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- google开启手机模式调试 -->
+    <div class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+    </div>
+    <!-- 浮动方法 -->
+    <div class="box">
+        <section>
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+        </section>
+    </div>
+</body>
+
+</html>

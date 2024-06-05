@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+</body>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/Mock.js/1.0.1-beta3/mock.js"></script>
+<!-- 给mock加开关，1.注释掉 2.添加全局变量 -->
+<script src="./mock/test.js"></script>
+<script>
+    // jQuery
+    $.ajax({
+        url: '/test',
+        dataType: 'json',
+        success: data => {
+            console.log(data);
+        }
+    })
+
+    // 原生js
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', '/test');
+    xhr.send();
+    xhr.onreadystatechange = function() {
+        // 判断响应数据是否全部返回
+        if (xhr.readyState === 4) {
+            // 判断响应状态码 200 404 403 401 500
+            // 2xx 成功
+            if (xhr.status >= 200 && xhr.status < 300) {
+                // 处理结果 行 头 空行 体
+                // console.log(xhr.status);//状态码
+                // console.log(xhr.statusText);//状态字符串
+                // console.log(xhr.getAllResponseHeaders());//所有的响应头
+                // console.log(xhr.response);//响应体
+                // 接收服务器返回的JSON数据
+
+                // // 手动转换
+                let data = JSON.parse(xhr.responseText);
+
+                // 自动转换，设置返回数据的格式即可xhr.responseType = 'json';\
+                console.log(data);
+            } else {
+
+            }
+        }
+    }
+</script>
+</script>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<h1>题目描述</h1>
+<h4>输入一个大于0的十进制数,将其转换为二进制</h4>
+<h1>解题思路</h1>
+<h4>10进制转2进制实际上就是用10不断去除以2,将余数从下往上返回即可</h4>
+<h1>尝试使用</h1>
+请输入一个大于0的十进制数(一个大于0的整数):
+<input type="text" id="input" />
+<br />
+<button id="btn">计算</button>
+<br /> 2进制结果:
+<input type="text" id="output" />
+<br />
+<h1>代码实现</h1>
+<pre>
+    <code>
+        const ten2Two = function(number) {
+            console.log(number);
+            // 声明一个栈
+            const stack = new Stack();
+            // 声明一个字符串
+            let binary = "";
+            // 入栈
+            while (number > 0) {
+                // 取余入栈
+                stack.push(number % 2);
+                // 取整
+                number = Math.floor(number / 2);
+            }
+            // 出栈
+            while (stack.size() > 0) {
+                // 拼接字符串
+                binary += stack.pop();
+            }
+            return binary;
+        };
+        document.getElementById("btn").addEventListener("click", function() {
+            const inputValue = document.getElementById("input").value;
+            // 字符类型转数值类型
+            const outputValue = main(inputValue - 0);
+            document.getElementById("output").value = outputValue;
+        });
+    </code>
+</pre>
+
+<body>
+    <script src="../../Stack.js"></script>
+    <script>
+        const main = function(number) {
+            console.log(number);
+            // 声明一个栈
+            const stack = new Stack();
+            // 声明一个字符串
+            let binary = "";
+            // 入栈
+            while (number > 0) {
+                // 取余入栈
+                stack.push(number % 2);
+                // 取整
+                number = Math.floor(number / 2);
+            }
+            // 出栈
+            while (stack.size() > 0) {
+                // 拼接字符串
+                binary += stack.pop();
+            }
+            return binary;
+        };
+        document.getElementById("btn").addEventListener("click", function() {
+            const inputValue = document.getElementById("input").value;
+            // 字符类型转数值类型
+            const outputValue = main(inputValue - 0);
+            document.getElementById("output").value = outputValue;
+        });
+    </script>
+</body>
+
+</html>

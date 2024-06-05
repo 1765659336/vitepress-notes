@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* flex弹性，自动适用父盒子和子盒子的大小变化 */
+        /* .container {
+            width: 300px;
+            height: 300px;
+            border: 1px solid #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        } */
+        /* 使用flex+margin:auto */
+        /* .container {
+            width: 300px;
+            height: 300px;
+            border: 1px solid #ccc;
+            display: flex;
+        }
+        
+        .container div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            margin: auto;
+        } */
+        /* 使用定位+margin:auto */
+        /* .container {
+            width: 300px;
+            height: 300px;
+            border: 1px solid #ccc;
+            position: relative;
+        }
+        
+        .container div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+        } */
+        /* 使用定位 */
+        
+        .container {
+            width: 300px;
+            height: 300px;
+            border: 1px solid #ccc;
+            position: relative;
+        }
+        
+        .container div {
+            width: 200px;
+            height: 100px;
+            background-color: pink;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            /* 移动自身盒子高度的一半，宽度的一半 */
+            /* 方式1 */
+            /* margin: -50px -100px; */
+            /* 方式2,百分比相对自己 */
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            测试测试测试测试测试
+        </div>
+    </div>
+</body>
+
+</html>

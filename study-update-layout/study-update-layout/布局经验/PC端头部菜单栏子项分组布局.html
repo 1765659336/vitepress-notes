@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            height: 50px;
+            background-color: pink;
+            display: flex;
+        }
+        
+        .container div {
+            background-color: #ccc;
+        }
+        
+        .separated {
+            /* 给右边剩余的空间进行分配 */
+            margin-right: auto;
+        }
+        
+        .container2 {
+            height: 50px;
+            background-color: pink;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .flexContainer {
+            display: flex;
+        }
+        
+        .flexContainer div {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div class="separated">4</div>
+        <div>5</div>
+        <div>6</div>
+        <div class="separated">7</div>
+        <div>8</div>
+    </div>
+    <br>
+    <div class="container2">
+        <div class="flexContainer">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+        </div>
+        <div class="flexContainer">
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+        </div>
+        <div class="flexContainer">
+            <div>8</div>
+        </div>
+    </div>
+</body>
+
+</html>

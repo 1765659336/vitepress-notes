@@ -1,0 +1,16 @@
+<!--渲染一个内容-->
+<view class="title">
+{{message}}
+</view>
+<!-- 渲染列表 -->
+<!-- block不会生成一个页面节点 -->
+<block wx:for="{{movies}}" wx:key="*this"> 
+  <view>{{item}}</view>
+</block>
+<!-- 计数器案例 -->
+<view>
+当前数：{{count}}
+</view>
+<button mini bind:tap="countAdd">+1</button>
+<button mini bind:tap="countDel">-1</button>
+
